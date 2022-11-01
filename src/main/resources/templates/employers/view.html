@@ -7,10 +7,27 @@
 
 <nav th:replace="fragments :: page-header"></nav>
 
-<div class="job-listing">
-    <p th:text="${'Name: ' + employer.name}"></p>
-    <p th:text="${'Location: ' + employer.location}"></p>
-</div>
+<!--    ORIGINAL GA4 STARTER CODE   -->
+
+<!--<div class="job-listing">-->
+<!--    <p th:text="${'Name: ' + employer.name}"></p>-->
+<!--    <p th:text="${'Location: ' + employer.location}"></p>-->
+<!--</div>-->
+
+
+<!--    I REFACTORED TO MATCH PREVIOUS GA3 MVC TABLE FORMATTING.    -->
+<!--    Could also hardcode the headings instead:  <th> Name: </th>  and <th> Location: </th>-->
+
+<table class="job-listing">
+    <tr>
+        <th th:text="${'Name: '}"></th>
+        <td th:text="${employer.name}"></td>
+    </tr>
+    <tr>
+        <th th:text="${'Location: '}"></th>
+        <td th:text="${employer.location}"></td>
+    </tr>
+</table>
 
 
 </body>

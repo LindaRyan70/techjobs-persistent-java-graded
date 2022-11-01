@@ -13,6 +13,13 @@ public class Skill extends AbstractEntity {
     @Size(min = 1, max = 750, message = "Please limit skill description to 750 characters.")
     private String description;
 
+
+    // Not sure if I need a parameterized constructor here or not. Currently, it works w/o it but leaving on for now.
+    public Skill(String description) {
+        this.description = description;
+    }
+
+
     // Part 2.4: Models (Skill) - Add no arg constructor since an @Entity, so Hibernate can create table in MySQL database. //
     public Skill() {
     }

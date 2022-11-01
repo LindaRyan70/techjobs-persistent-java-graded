@@ -7,20 +7,55 @@
 
 <nav th:replace="fragments :: page-header"></nav>
 
-<div class="job-listing">
-    <p th:text="${'ID: ' + job.id}"></p>
-    <p th:text="${'Name: ' + job.name}"></p>
-    <p>
-        Employer: <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>
-    </p>
-    <p> Skills:
-        <ul>
-            <li th:each="skill : ${job.skills}">
-                <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
-            </li>
-        </ul>
-    </p>
-</div>
+<!--ORIGINAL GA4 HTML-->
+
+<!--<div class="job-listing">-->
+<!--    <p th:text="${'ID: ' + job.id}"></p>-->
+<!--&lt;!&ndash;    Lines below would add a hyperlink to the ID number in view, but hyperlink is unnecessary b/c already at the individual view.html level. &ndash;&gt;-->
+<!--&lt;!&ndash;    <p>&ndash;&gt;-->
+<!--&lt;!&ndash;       ID: <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;    </p>&ndash;&gt;-->
+<!--    <p th:text="${'Name: ' + job.name}"></p>-->
+<!--    <p>-->
+<!--        Employer: <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>-->
+<!--    </p>-->
+<!--    <p> Skills:-->
+<!--        <ul>-->
+<!--            <li th:each="skill : ${job.skills}">-->
+<!--                <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </p>-->
+<!--</div>-->
+
+
+<!-- I refactored the html to match the formatting of list-job and search templates. -->
+<table class="job-listing">
+    <tr>
+        <th> Job ID: </th>
+        <td th:text="${job.id}"></td>
+    </tr>
+    <tr>
+        <th> Name: </th>
+        <td th:text="${job.name}"></td>
+    </tr>
+    <tr>
+        <th> Employer: </th>
+        <td>
+            <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>
+        </td>
+    </tr>
+   <tr>
+        <th> Skills: </th>
+        <td>
+            <ul>
+                <li th:each="skill : ${job.skills}">
+                    <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
 
 </body>

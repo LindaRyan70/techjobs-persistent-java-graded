@@ -25,12 +25,14 @@
 	-- SELECT * FROM skill;
 
 -- Run GA4 Part 2 Test Query: List the names of the employers in St. Louis City. --
+
 SELECT name FROM employer
 WHERE location = "St. Louis City";
 
 
--- Part 3: Test it with SQL
+-- Part 3: Test it with SQL: Write the SQL statement to remove the job table.
 
+DROP TABLE job;
 
 
 -- Part 4: Test it with SQL
