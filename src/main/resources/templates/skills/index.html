@@ -6,7 +6,7 @@
 
 <div th:replace="fragments :: page-header"></div>
 
-<p th:unless="${skills} and ${skills.size()}">no jobs!</p>
+<h3 th:unless="${skills} and ${skills.size()}">No Skills Available!</h3>
 
 <div class="container body-content">
     <h2>Skills</h2>
@@ -16,6 +16,10 @@
         </li>
     </ul>
     <a th:href="@{'/skills/add'}">Add Skills</a>
+
+    <!-- My Own Extra - Added a line break and a hyperlink back to the Add Jobs page. -->
+    <br>
+    <a th:href="@{'/add'}">Back to Add Job Page</a>
 
 </div>
 

@@ -37,8 +37,14 @@
 <!--    </table>-->
 
 
-    <!--    I REFACTORED TO MATCH TABLE FORMATTING IN VIEW TEMPLATES AND THE GA3 MVC VERSION.    -->
+    <!-- My Own Extra - Took this from my coding-events. Line below prints a message if there are no jobs entered for
+    a particular employer or skill via the form yet.-->
+    <h3 th:unless="${jobs} and ${jobs.size()}">No Jobs Are Currently Available!</h3>
+    <!-- My Own Extra - Added a line break and a hyperlink back to the Jobs List page. -->
+    <br>
+    <a th:href="@{'/list'}">Back to Jobs List Page</a>
 
+    <!--    I REFACTORED TO MATCH TABLE FORMATTING IN VIEW TEMPLATES AND THE GA3 MVC VERSION.    -->
     <table class="job-listing" th:each="job : ${jobs}">
         <tr>
             <th> Job ID: </th>

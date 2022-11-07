@@ -45,7 +45,7 @@ public class EmployerController {
         if (errors.hasErrors()) {
             return "employers/add";
         }
-        employerRepository.save(newEmployer); // Added code line here to save valid Employer objects to the database. //
+        employerRepository.save(newEmployer); // Added code line here to save valid Employer objects to the database, using param variable above. //
         return "redirect:";
     }
 
@@ -54,7 +54,6 @@ public class EmployerController {
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
-//        Optional optEmployer = null;
         Optional optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();

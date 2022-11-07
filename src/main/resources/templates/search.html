@@ -63,6 +63,9 @@
 <!--        </tr>-->
 <!--    </table>-->
 
+    <!-- My Own Extra - Took this from my coding-events. Line below prints a message if there are no jobs entered for
+       a particular employer or skill via the form yet. But I may turn it off b/c it displays upon page launch, as well. -->
+    <h3 th:unless="${jobs} and ${jobs.size()}">No Job Data.</h3>
 
     <!--    I REFACTORED TO MATCH TABLE FORMATTING IN VIEW TEMPLATES AND THE GA3 MVC VERSION.    -->
 

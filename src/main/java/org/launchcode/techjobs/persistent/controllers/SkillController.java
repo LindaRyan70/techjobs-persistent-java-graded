@@ -13,7 +13,11 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 
-/* Part 2.   */
+/* Part 2.1.5  Create a SkillController class and replicate the steps you followed for EmployerController.
+                The new controller should have the methods, index, displayAddSkillForm, processAddSkillForm, and
+                displayViewSkill. These methods should behave exactly as the corresponding methods in EmployerController.
+                The relevant templates have already been created for you.
+      I literally split-screened my Intellij and replicated EmployerController with SkillController-specific details. */
 @Controller
 @RequestMapping("skills")
 public class SkillController {

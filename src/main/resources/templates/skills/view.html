@@ -7,14 +7,42 @@
 
 <nav th:replace="fragments :: page-header"></nav>
 
-<div class="job-listing">
-    <p th:text="${'Name: ' + skill.name}"></p>
-    <p th:text="${'Description: ' + skill.description}"></p>
-    <p> Jobs:
-        <ul>
-            <li th:each="job : ${skill.jobs}">
-                <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
-            </li>
-        </ul>
-    </p>
-</div>
+<!--<div class="job-listing">-->
+<!--    <p th:text="${'Name: ' + skill.name}"></p>-->
+<!--    <p th:text="${'Description: ' + skill.description}"></p>-->
+<!--    <p> Jobs:-->
+<!--        <ul>-->
+<!--            <li th:each="job : ${skill.jobs}">-->
+<!--                <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </p>-->
+<!--</div>-->
+
+<!--    I REFACTORED TO MATCH PREVIOUS GA3 MVC TABLE FORMATTING.    -->
+<!--    Could also hardcode the headings instead:  <th> Name: </th>  and <th> Skill: </th>, similar to Jobs: below. -->
+
+<table class="job-listing">
+    <tr>
+        <th th:text="${'Name: '}"></th>
+        <td th:text="${skill.name}"></td>
+    </tr>
+    <tr>
+        <th th:text="${'Description: '}"></th>
+        <td th:text="${skill.description}"></td>
+    </tr>
+    <tr>
+        <th> Jobs: </th>
+        <td>
+            <ul>
+                <li th:each="job : ${skill.jobs}">
+                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>

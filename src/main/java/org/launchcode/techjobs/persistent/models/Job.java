@@ -1,6 +1,8 @@
 package org.launchcode.techjobs.persistent.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Job extends AbstractEntity{
@@ -17,13 +19,21 @@ public class Job extends AbstractEntity{
     @ManyToOne
     private Employer employer;
 
-    private String skills;
+/*   Part 4.2 - ManyToMany - Refactor Job.skills field to reflect the Many-To-Many relationship with Skill.jobs.
+        Originally I had it map to "jobs", but that threw an error that it could not do that, so I removed the mappedBy
+        from the @ManyToMany annotation on the Job.skills field, and it worked. I also refactored parameterized
+        constructor to allow for a List of someSkills, and added a getter/setter. */
+//    private String skills;
+    @ManyToMany
+    private List<Skill> skills = new ArrayList<>();
 
     public Job() {
     }
 
     //  Part 3.2.2: Update Job Model class - Refactor constructor to reflect change in anEmployer type from String to Employer.
-    public Job(Employer anEmployer, String someSkills) {
+    /*    Part 4.2 - Setting up a Many-To-Many (Refactoring Job.skills) I refactored the type for the existing variable
+                    someSkills in the constructor. (Created similar variable someJobs in the Job constructor.) */
+    public Job(Employer anEmployer, List<Skill> someSkills) {
         super();
         this.employer = anEmployer;
         this.skills = someSkills;
@@ -48,11 +58,21 @@ public class Job extends AbstractEntity{
         this.employer = employer;
     }
 
-    public String getSkills() {
+
+//    public String getSkills() {
+//        return skills;
+//    }
+//
+//    public void setSkills(String skills) {
+//        this.skills = skills;
+//    }
+
+    /*  Part 4.2 Setting up Many-To-Many - Refactor Job.skills - Refactor get/set types above to List<Skill>  */
+    public List<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(String skills) {
+    public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
 }
