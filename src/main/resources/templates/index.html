@@ -6,6 +6,8 @@
 
 <div th:replace="fragments :: page-header"></div>
 
+<!-- Original Starter Code Layout with simple unordered/bullet and hyperlinked list of TechJobs on the main page. -->
+
 <div class="container body-content">
     <h2>TechJobs</h2>
     <ul>
@@ -15,6 +17,25 @@
     </ul>
 
 </div>
+
+
+<!-- My Own Extra - I refactored starter code to have main list of TechJobs display in the same alternating color table
+    layout as all the other pages, but decided to stick w/ original non-table list b/c takes up less space on page. -->
+
+<!--<div class="container body-content">-->
+<!--    <h2>TechJobs</h2>-->
+<!--    <table class="job-listing">-->
+<!--        <tr th:each="job : ${jobs}">-->
+<!--            <td>-->
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</div>-->
 
 </body>
 </html>

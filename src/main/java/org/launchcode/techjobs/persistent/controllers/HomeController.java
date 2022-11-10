@@ -99,11 +99,19 @@ public class HomeController {
                 newJob.setEmployer(optionalEmployer.get());
             }
 
+        /* NOTE: Part 3.3.4 Version 1 - This is the long-hand way of doing the above. The Version 2 above simply takes
+         * the right side of the = optionalEmployer.get() and passes it directly into the newJob.setEmployer( ) as an arg.  */
+//            Optional<Employer> optionalEmployer = employerRepository.findById(employerId);
+//            if (optionalEmployer.isPresent()) {
+//                Employer employer = optionalEmployer.get();
+//                newJob.setEmployer(employer);
+//            }
+
         /*  NOTE: Per IntelliJ, this 'functional style expression' works in place of the if(optionalEmployer.isPresent())
                   statement above by invoking the (className :: methodName). In this case, newJob is Job type.  */
 //        optionalEmployer.ifPresent(newJob::setEmployer);
 
-        /*  This condensed statement does NOT work b/c passing an Optional<Employer> type where it expects Employer type. */
+        /*  NOTE: This condensed statement does NOT work b/c passing an Optional<Employer> type where it expects Employer type. */
 //                newJob.setEmployer(employerRepository.findById(employerId));
 
         /*  Part 4.3 HomeController - Added a List of Skill type named someSkills and setting it to equal skillRepository

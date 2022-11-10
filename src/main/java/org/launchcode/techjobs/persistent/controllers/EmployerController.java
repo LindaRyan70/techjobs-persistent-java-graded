@@ -49,8 +49,9 @@ public class EmployerController {
         return "redirect:";
     }
 
-    /* Part 2.1.4: Controllers - Replaced the null initialization line below to use employerRepository to interact with our
-                    database, along with .findById() method passing employerId variable from controller method param list above */
+    /* Part 2.1.4: Controllers - Replaced the starter code:
+          Optional optEmployer = null       initialization line below to use employerRepository to interact with our
+          database, along with .findById() method passing employerId variable from controller method param list above */
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 

@@ -8,6 +8,8 @@
 
 <h3 th:unless="${skills} and ${skills.size()}">No Skills Available!</h3>
 
+<!-- ORIGINAL BULLET UNORDERED LIST FORMAT (NO TABLE) -->
+
 <div class="container body-content">
     <h2>Skills</h2>
     <ul>
@@ -17,11 +19,39 @@
     </ul>
     <a th:href="@{'/skills/add'}">Add Skills</a>
 
-    <!-- My Own Extra - Added a line break and a hyperlink back to the Add Jobs page. -->
-    <br>
+    <!-- My Own Extra - Added a line break and a hyperlink back to the Add Jobs page:
+                    <br> = next line
+                    <hr> = a literal horizontal line across the page break -->
+    <hr>
     <a th:href="@{'/add'}">Back to Add Job Page</a>
 
 </div>
+
+
+<!-- The refactored code below displays a 2 color table with rows like the other displays, but I decided to stick with
+        the original plain unordered hyperlink list formatting above b/c takes up less vertical space on the web page. -->
+
+<!--<div class="container body-content">-->
+<!--    <h2>Skills</h2>-->
+<!--    <table class="job-listing">-->
+<!--        <tr th:each="skill : ${skills}">-->
+<!--            <td>-->
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--    <a th:href="@{'/skills/add'}">Add Skills</a>-->
+
+<!--    &lt;!&ndash; My Own Extra - Added a literal horizontal line break and a hyperlink back to the Add Jobs page. &ndash;&gt;-->
+<!--    <hr>-->
+<!--    <a th:href="@{'/add'}">Back to Add Job Page</a>-->
+
+<!--</div>-->
 
 </body>
 </html>

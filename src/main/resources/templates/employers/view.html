@@ -29,6 +29,14 @@
     </tr>
 </table>
 
+<!-- EXTRA: Go Back one-page link Version 1 - This version (commented out) works both in same Tab and if new Tab opened.
+        However, it only goes back and forth between 2 pages. If page views are A-B-C-D this link results in C-D-C-D  -->
+<!--<a href="#" onclick="location.href = document.referrer; return false;">Go Back</a>-->
+
+<!-- EXTRA: Go Back one-page link Version 2 - This version allows you to continue to go back 1 page at a time. If page
+views A-B-C-D this link results in C-B-A. However, it only works w/in same browser Tab. Also add literal full line break. -->
+<hr>
+<a href="#" onclick="history.go(-1)">Go Back</a>
 
 </body>
 </html>

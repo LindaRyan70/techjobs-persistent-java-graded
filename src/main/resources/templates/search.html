@@ -28,7 +28,10 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+<!--My Own Extra - I refactored line below to add a default value='All' in the searchTerm text box, so the user knows
+    it will default to return all jobs if they select a skill or employer radio button w/o changing the searchTerm input.-->
+<!--            <input type="text" name="searchTerm" id="searchTerm"/>-->
+            <input type="text" name="searchTerm" id="searchTerm" value="All"/>
         </p>
 
         <input type="submit" value="Search" />
